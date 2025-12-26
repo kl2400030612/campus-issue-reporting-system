@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard | Campus Issue Reporting</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Student Dashboard</div>
+    <div class="tagline">Raise and track your campus issues</div>
+    <button id="logoutBtn" class="btn ghost">Logout</button>
+  </header>
+
+  <main class="dashboard">
+    <section class="card wide">
+      <div class="card-header">
+        <div>
+          <h1>New Issue</h1>
+          <p class="muted">Describe the problem so admins can resolve it quickly.</p>
+        </div>
+      </div>
+
+      <form id="issueForm" class="form grid-2">
+        <div>
+          <label for="issueTitle">Title</label>
+          <input type="text" id="issueTitle" name="title" placeholder="Short summary" required />
+        </div>
+
+        <div>
+          <label for="issueCategory">Category</label>
+          <select id="issueCategory" name="category" required>
+            <option value="Hostel">Hostel</option>
+            <option value="WiFi">WiFi</option>
+            <option value="Classroom">Classroom</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="full-row">
+          <label for="issueDescription">Description</label>
+          <textarea id="issueDescription" name="description" rows="4" placeholder="Add details that help admins reproduce and fix the issue" required></textarea>
+        </div>
+
+        <div class="full-row actions">
+          <button type="submit" class="btn primary">Submit Issue</button>
+          <span id="issueMessage" class="message"></span>
+        </div>
+      </form>
+    </section>
+
+    <section class="card wide">
+      <div class="card-header">
+        <div>
+          <h2>Your Issues</h2>
+          <p class="muted">Only issues you submitted are shown here.</p>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table" aria-label="Student issues table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="studentIssues"></tbody>
+        </table>
+        <p id="emptyState" class="muted"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">Need help? Provide clear details to speed up resolution.</footer>
+
+  <script src="js/student.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Campus Issue Reporting</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Admin Dashboard</div>
+    <div class="tagline">Review, prioritize, and resolve campus issues</div>
+    <button id="logoutBtn" class="btn ghost">Logout</button>
+  </header>
+
+  <main class="dashboard">
+    <section class="card wide">
+      <div class="card-header">
+        <div>
+          <h1>All Reported Issues</h1>
+          <p class="muted">Update status and priority as you work through the queue.</p>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table" aria-label="All issues table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Student</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminIssues"></tbody>
+        </table>
+        <p id="adminEmptyState" class="muted"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">Keep students updated by moving issues through each stage.</footer>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
